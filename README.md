@@ -34,9 +34,17 @@ MATPEAT能够有效提高算法测试效率，是一个可靠的研究与教育�
 ## 三、使用方法
 ![软件页面](https://github.com/QyfSDU/platform/assets/144082078/fb3337e4-2769-48c7-b2f0-0ab4ae88637d)
 
-1. ①为算法导入与选择区，用户可导入并选择待测算法（算法代码编写注意事项见[四、算法代码编写注意事项](./四、算法代码编写注意事项 "点击跳转") ）。
-2. ②
-3. ③
+1. ①为算法导入与选择区，用户可导入并选择待测算法（算法代码编写注意事项见 四、算法代码编写注意事项），无误后点击"Confirm"。
+2. ②为测试环节选择与参数输入区，用户在相应测试项目中输入合理参数，无误后点击"Confirm"。
+3. ③为测试结果显示区，分别显示算法的幅值、相位估计结果与算法稳定后的最大误差。
+
+**注：** 为保证实时估计结果清晰度，同时测试的算法不应超过五个。
+
+故障前后幅值分别为0.1 p.u.与1 p.u.，相位分别为 $\frac{\pi}{3}$ rad与  $\frac{\pi}{2}$ rad.
+
+谐波测试环节中，根据IEEE-519标准[^6]在2-10、11-16等谐波区间各随机选择三个谐波分量，按最大谐波电流失真上限设置测试信号幅值，相位随机选取。
+
+用户可以根据需求，修改Signal.m,Signal_sensitivity.m与Signal_sensitivity_SNR.m文件，以生成满足要求的测试信号。
 
 
 ## 四、算法代码编写注意事项
@@ -46,7 +54,7 @@ MATPEAT能够有效提高算法测试效率，是一个可靠的研究与教育�
 - 测试信号长度不应小于八个工频周期。
 - 算法所需的超出一个周期的采样点数目（即参考代码中的delay）需根据算法原理人为设置。
 
-为算法编写提供参考，下面提供了传统DFT算法代码。
+为给算法编写提供参考，下面提供了传统DFT算法代码。
 ```MATLAB
 % Traditional DFT function
 % The inputs are the test signal, the rated frequency and the sampling frequency
@@ -81,3 +89,5 @@ end
 [^4]:J. K. Hwang and C. S. Lee, “Fault current phasor estimation be-low one cycle using Fourier analysis of decaying DC compo-nent,” IEEE Trans. Power Del., vol. 37, no. 5, pp. 3657–3668, Oct. 2022, doi: 10.1109/TPWRD.2021.3134086.
 
 [^5]:Q. Zhang, X.Y. Bian, X,Y. Xu, R.M. Huang, H.E. Li, “Research on factors influencing subsynchronous oscillation damping characteristics based on SVD-Prony and principal component regression,” J. Electr. Eng. Technol., vol. 37 no. 17, pp. 4364–4376, Sep. 2022, doi: 10.19595/j.cnki.1000-6753.tces.211085.
+
+[^6]:IEEE Standard for Harmonic Control in Electric Power Systems, IEEE Standard 519, 2022.
