@@ -4,8 +4,6 @@
 
 信号中的衰减直流分量（Decaying DC Component，DDC）严重影响相量测量算法的精度。目前，虽然已有大量的抗DDC相量测量算法，但缺乏高效的算法测试软件。可再生能源大规模并网、柔性负荷接入的背景下，电气信号呈现频谱特征复杂、噪声大与动态过程复杂的特征，现有单一的评估方案已难以覆盖新型电力系统的信号形态。因此，建立了抗DDC相量测量算法综合测试平台——MATPEAT，提高算法测试效率。
 
-
-
 ## 主要功能
 - MEATPEAT是一个开源的抗DDC相量测量算法综合测试软件，用于评估此类算法的综合性能。
 - 目前，MEATPEAT提供DFT,ADFT[^1],TDFT[^2],DDFT[^3],DLES[^4]与Prony[^5]六种对比算法,并提供算法导入接口。
@@ -33,13 +31,14 @@
 - MATPEAT能够有效提高算法测试效率，是一个可靠的研究与教育工具。我们鼓励您加入我们，进一步开发、完善测试平台。
 
 ## 如何部署
-**注:** MATPEAT仅适用于MATLAB 2020a及以上版本。
 
 1. 将Algorithm_test_platform.mlapp中代码savefloder='XXX'中xxx修改为**文件绝对保存路径**。
 2. 使用MATLAB appdesigner的软件打包功能将文件打包为一个APP。
    - 点击Algorithm_test_platform.mlapp中“共享”，可选择将文件打包为MATLAB APP，Web APP或独立桌面APP（需一同打包 MATLAB Runtime）。
    - 将主文件与通过分析而包含的文件外的文件添加至辅助文件，确保没有遗漏，点击点击右侧“打包”。
 3. 安装打包生成的.mlappinstall文件。
+4. 
+**注:** MATPEAT是基于MATLAB 2020a版本开发的，不需要任何额外的工具箱。仅适用于R2020a及以上版本。
 
 ## 使用方法
 ![软件页面](https://github.com/QyfSDU/platform/assets/144082078/fb3337e4-2769-48c7-b2f0-0ab4ae88637d)
@@ -85,10 +84,16 @@ function [amp_X_DFT,phase_X_DFT,delay] = DFT(x,f0,fs)
 end
 ```
 
+## 软件结构
+![image](https://github.com/QyfSDU/platform/assets/144082078/03b4056b-9548-473e-8da5-7f96884cd856)
+
+
+
 ## 版权说明
 
-代码内容采用 新
+**代码内容采用** GPL 许可
 
+**文档内容采用** 署名-禁止演绎 4.0 国际协议许可
 
 
 [^1]:M. R. Dadash Zadeh and Z. Zhang, “A new DFT-based current phasor estimation for numerical protective relaying,” IEEE Trans. Power Del., vol. 28, no. 4, pp. 2172–2179, Oct. 2013, doi: 10.1109/TPWRD.2013.2266513.
