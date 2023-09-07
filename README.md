@@ -91,9 +91,9 @@ end
 
 ## 版权说明
 
-**代码内容采用** GPL 许可
+代码内容采用 **GPL 许可**
 
-**文档内容采用** 署名-禁止演绎 4.0 国际协议许可
+文档内容采用 **署名-禁止演绎 4.0 国际协议许可**
 
 
 [^1]:M. R. Dadash Zadeh and Z. Zhang, “A new DFT-based current phasor estimation for numerical protective relaying,” IEEE Trans. Power Del., vol. 28, no. 4, pp. 2172–2179, Oct. 2013, doi: 10.1109/TPWRD.2013.2266513.
